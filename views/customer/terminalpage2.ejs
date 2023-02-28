@@ -1,0 +1,112 @@
+<%- include('../partials/header') -%>
+<%- include("../partials/navbar") -%>
+
+    <section class="home" id="home">
+        <div class="content">
+            <h3>Making <span> Grocery shoping </span> easy </h3>
+            <a href="#" class="btn"> get yours now </a>
+        </div>
+            
+    </section>
+    <section class="banner-container">
+
+        <div class="banner">
+            <img src="/images/me2.png" alt="">
+            <div class="content">
+                <h3> Meat & Poultry</h3>
+                <a href="#" class="btn">shop now</a>
+            </div>
+        </div>
+
+        <div class="banner">
+            <img src="/images/fruu.png" alt="">
+            <div class="content">
+                <h3>fruits &<br>Vegetables</h3>
+                <a href="#" class="btn">shop now</a>
+            </div>
+        </div>
+
+        <div class="banner">
+            <img src="/images/m3.png" alt="">
+            <div class="content">
+                <h3> Dairy & Eggs</h3>
+                <a href="#" class="btn">shop now</a>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- end -->
+
+    <!-- product -->
+
+    <section class="product" id="product">
+
+        <h1 class="heading"> our <span>products</span></h1>
+        <%chunk.forEach((products)=>{%>
+            
+        <div class="box-container">
+            <%products.forEach((product)=>{%>
+            <div class="box">
+                <div class="image">
+                    <img src="<%='/images/'+product.photoProduct%>" alt="image about <%=product.nameProduct%>">
+                </div>
+                
+                <div class="content">
+                    <h3><%=product.nameProduct%></h3>
+                    <div class="price">$<%=product.priceProduct%></div>
+                    
+                    <br>
+                    <br>
+                    
+                    <a href="<%='addtocart/'+product.id%>" class="btn btn-success">Add to cart</a>
+                    <% if ((user) && (user.email == "admin@admin.com" )) {%>
+                    <a href="<%='edit/'+product.id%>" class="btn btn-primary">Edit</a>
+                    <a href="<%='delete/'+product.id%>" class="btn red"   id="deleteBtn" data-id="<%= product.id %>">Delete</a>
+                    <%}%>
+                </div>
+            </div>
+
+            <%})%>
+
+        </div>
+        <%})%>
+
+    </section>
+
+    <!-- end -->
+
+    <!-- about -->
+
+    <section class="about" id="about">
+
+        <h1 class="heading"> <span>about </span> us </h1>
+
+        <div class="row">
+
+            <div class="content">
+                <h3>The right store with the right price</h3>
+                <div class="divider"></div>
+                <p class="heading">Spare more with<span><strong> Cs Markets </strong> </span> We give you the most minimal costs on the entirety of your grocery needs.</p>
+                <a href="#" class="btn">read more</a>
+            </div>
+
+            <div class="image">
+                <img src="/images/ab1.png" alt="">
+            </div>
+            <div class="image">
+                <img src="/images/ab2.png" alt="">
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- end -->
+
+
+    
+
+   
+        <%- include('../partials/footer') -%>

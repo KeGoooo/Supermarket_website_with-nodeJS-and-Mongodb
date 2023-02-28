@@ -1,0 +1,38 @@
+<%- include('../partials/header') -%>
+<%- include('../partials/navbar') -%>
+
+
+<section class="product" id="product">
+
+    <h1 class="heading"> our <span>products</span></h1>
+   
+        
+    <div class="box-container">
+        
+        <div class="box">
+            <div class="image">
+                <img src="<%='/images/'+item.photoProduct%>" alt="image about <%=item.nameProduct%>">
+            </div>
+            
+            <div class="content">
+                <h3><%=item.nameProduct%></h3>
+                <div class="price">$<%=item.priceProduct%></div>
+                
+                <br>
+                <br>
+                <!-- <button class='btn btn-success' onclick = 'addtocart(" + (i++) + ")'>Add to cart</button><br> -->
+                <a href="<%='addtocart/'+item.id%>" class="btn btn-success">Add to cart</a>
+                <% if ((user) && (user.email == "admin@admin.com" )) {%>
+                <a href="<%='edit/'+item.id%>" class="btn btn-primary">Edit</a>
+                <a href="<%='delete/'+item.id%>" class="btn red"   id="deleteBtn" data-id="<%= item.id %>">Delete</a>
+                <%}%>
+            </div>
+        </div>
+
+        
+
+    </div>
+   
+
+</section>
+<%- include('../partials/footer') -%>

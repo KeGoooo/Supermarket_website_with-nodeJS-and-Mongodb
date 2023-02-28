@@ -1,0 +1,41 @@
+<%- include('../partials/header') -%>
+    <%- include('../partials/navbar') -%>
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
+        <section class="home" id="home">
+            <div class="border">
+                <!-- users/signup mn 3ndy -->
+                <form action="/customer_log/signup" method="post" class="login-form">
+
+                    <h3 style="text-align: left;">Sign up</h3>
+                    <br>
+                    <input type="text" placeholder="enter your name " class="box" name="name" id="name"><BR><BR>
+                    <input type="email" placeholder="enter your email" class="box" name="email" id="email"><br><br>
+                    <input type="password" placeholder="enter your password" class="box" name="password"
+                        id="password"><br><br>
+                    <input type="password" placeholder="confirm password" class="box" name="confirm_password"
+                        id="confirm_password"><br><br>
+
+                    <!-- <a href="login" input type="submit" class="btn" id="register-button">Sign up</a> -->
+
+
+                    <input type="submit" class="btn" id="register-button" value="Signup">
+
+                    <!-- <button type="submit" id="register-button" onclick="return promptPassword()">Signup</button> -->
+                </form>
+            </div>
+        </section>
+
+        <script>
+            function promptPassword() {
+
+                if (document.getElementById("password").value != document.getElementById("confirm_password").value) {
+                    alert("Password doesn't match!");
+                    document.getElementById('password').value = "";
+                    document.getElementById('confirm_password').value = "";
+                }
+            }
+        </script>
+
+
+
+        <%- include('../partials/footer') -%>

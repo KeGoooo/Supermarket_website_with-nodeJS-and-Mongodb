@@ -1,0 +1,35 @@
+<%- include('../partials/header') -%>
+<%- include('../partials/navbar') -%>
+  <br><br><br><br><br><br><br><br>
+    <!-- Admin -->
+
+    <section class="home" id="home">
+        <!-- users/signup mn 3ndy -->
+        <div class="box-container ">
+
+          <form action="/create" method="post">
+
+
+        <div class="editcard"> 
+          <div>
+              <h3>Add Products</h3><br><br>
+              <p>Product id<input type="text" class="box" id="idProduct" name="idProduct"idProduct placeholder="Enter the product id"></p>
+              <p>Product Name<input type="text" class="box" id="nameProduct" name="nameProduct" placeholder="Enter new name"></p>
+              <p>Product Price<input type="text" class="box" id="priceProduct" name="priceProduct" placeholder="Enter new price"></p>
+
+              <p>Product Image<input type="file" class="box" name="photoProduct" id="photoProduct" enctype="multipart/form-data" ></p>
+
+              <button type="submit" class="btn btn-success" id="addproduct">Add Product</button>
+
+
+
+          </div>
+      </div>
+          </form>
+  </div>
+  </div>
+</section>
+
+    <!-- end -->
+
+    <%- include('../partials/footer') -%>

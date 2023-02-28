@@ -1,0 +1,36 @@
+<%- include('../partials/header') -%>
+<%- include('../partials/navbar') -%>
+<link href="/css/style.css" rel="stylesheet" type="text/css">
+
+
+    <section class="home" id="home">
+              <!-- users/signup mn 3ndy -->
+              <div class="box-container">
+                <form action="/update" method="post">
+              <div class="editcard"> 
+                <div>
+                    <h3>Edit Products</h3><br><br>
+                    <input type="hidden" name="id" value="<%=product.id%>">
+                    <p>Product id<input type="text" class="box" id="idProduct" name="idProduct" placeholder="Enter the product id" value="<%=product.idProduct%>"></p>
+                    <p>Product Name<input type="text" class="box" id="nameProduct" name="nameProduct" placeholder="Enter new name" value="<%=product.nameProduct%>"></p>
+                    <p>Product Price<input type="text" class="box" id="priceProduct" name="priceProduct" placeholder="Enter new price" value="<%=product.priceProduct%>"></p>
+                    <!-- <p>Product Image<input type="text" class="box" id="newproductimage" placeholder="Enter new Image"></p> -->
+
+                    <p>Product Image<input class="box" type="file" name="photoProduct" id="photoProduct" value="<%=product.photoProduct%>"></form></p>
+                    
+        
+                    <button type="submit"   class="btn btn-success" id="applay">Apply</button>
+
+                 
+
+                </div>  
+            </div>
+                </form>
+        </div>
+        </div>
+    </section>
+    
+ 
+     
+        
+        <%- include('../partials/footer') -%>

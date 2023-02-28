@@ -1,0 +1,43 @@
+
+    <header class="header">
+
+        <a href="#" class="logo"> <img src="/images/gro.png" height="45px" width="50px"></i>CS Markets</a>
+        <nav class="navbar">
+            <a href="/">home</a>
+            <a href="<%='viewcart'%>">cart</a>
+            <a href="#product">products</a>
+            <a href="#about">about</a>
+            <% if ((user) && (user.email == "admin@admin.com" )) {%>
+                <!-- if(is admin) -->
+                <a href="addPage">Create</a>
+            <%}%>
+        </nav>
+        <nav class="navbar">
+            <form class="d-flex" action="/search" method="post" >
+            <input class="form-control me-2" type="text" placeholder="Search" aria-label="Search" id="searchname" name="searchname">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+        </nav>
+        
+
+        <nav class="navbar">
+            <div class="icons">
+                  
+
+                <!-- if(is not user) -->
+               
+                <% if (!user) { %>
+            <a href="/customer_log/login">login</a>
+            <a href="/customer_log/signup">sign up</a>
+            <% } else { %>
+            
+            <a href="/customer_log/logout">sign out</a>
+            <% } %>
+            </div>
+        </nav>
+    </header>
+     
+        
+        
+
+ 
